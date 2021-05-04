@@ -1,0 +1,63 @@
+@import "./utils/variables";
+@import "./components/header";
+@import "./components/main-section";
+@import "./components/modal";
+@import "./components/features";
+@import "./components/what-we-do";
+@import "./components/team";
+@import "./components/permanent";
+@import "./components/footer";
+@import "./components/portfolio";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--main-font);
+  color: var(--main-title-color);
+  letter-spacing: 0.03em;
+  font-size: 14px;
+}
+
+/*убираем точки у всех списков*/
+.menu,
+.address,
+.features-list,
+.what-we-do,
+.team-list,
+.list-images,
+.permanent-list,
+.features-icon-list,
+.social-list,
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
