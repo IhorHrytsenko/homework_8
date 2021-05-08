@@ -523,7 +523,8 @@
   height: 120px;
   margin-bottom: 30px;
   border-radius: 4px;
-  background-image: url(./img/sprite.svg#icon-group);
+  background-image: url(./img/icon_send.svg);
+  background-size: 70px 70px;
 }
 
 .features-list__title {
