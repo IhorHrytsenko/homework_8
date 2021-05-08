@@ -63,7 +63,7 @@
     margin-top: 30px;
 
     &:not(:last-child) {
-      flex-basis: calc((100% - 2 * 30px) / 2);
+      // flex-basis: calc((100% - 2 * 30px) / 2);
       margin-right: 30px;
     }
 

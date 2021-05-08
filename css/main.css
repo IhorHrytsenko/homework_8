@@ -211,23 +211,71 @@
 
 .main-section {
   background-color: var(--backgrount-footer);
-  padding-top: 200px;
-  padding-bottom: 200px;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(.././img/hero.jpg);
+  padding-top: 118px;
+  padding-bottom: 118px;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../img/mobile-hero.jpg);
   background-repeat: no-repeat;
-  background-size: 1600px 600px;
+  background-size: 480px 400px;
   background-position: center;
+}
+
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .main-section .box {
+    background-image: url(../../img/mobile-hero@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-section {
+    background-size: 768px 400px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../img/tablet-hero.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .main-section .box {
+    background-image: url(../../img/tablet-hero@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main-section {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-size: 1600px 600px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../img/desktop-hero.jpg);
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .main-section .box {
+    background-image: url(../../img/desktop-hero@2x.jpg);
+  }
 }
 
 .main-section__title {
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 1.62;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--background-light-text);
   margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .main-section__title {
+    font-size: 26px;
+    line-height: 1.62;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main-section__title {
+    font-size: 44px;
+    line-height: 1.36;
+  }
 }
 
 .main-section__button {
@@ -588,7 +636,6 @@
     margin-top: 30px;
   }
   .features-list__item:not(:last-child) {
-    flex-basis: calc((100% - 2 * 30px) / 2);
     margin-right: 30px;
   }
   .features-list__item:nth-child(2n + 2) {
@@ -650,6 +697,12 @@
   padding-bottom: 94px;
 }
 
+@media screen and (min-width: 1200px) {
+  .what-we-do-section {
+    padding-top: 94px;
+  }
+}
+
 .second-title {
   font-weight: 700;
   font-size: 36px;
@@ -673,8 +726,11 @@
   position: relative;
 }
 
-.what-we-do__item:not(:last-child) {
+.what-we-do__item {
   flex-basis: calc((100% - 3 * 30px) / 3);
+}
+
+.what-we-do__item:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -729,16 +785,15 @@
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .team-list__item {
-    margin: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
     width: 354px;
   }
   .team-list__item:not(:last-child) {
-    flex-basis: calc((100% - 2 * 30px) / 2);
     margin-right: 30px;
-    margin-bottom: 30px;
   }
   .team-list__item:nth-child(2n + 2) {
-    margin-right: 0;
     margin-bottom: 30px;
   }
 }
@@ -1035,9 +1090,14 @@
 }
 
 .footer-form {
-  display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .footer-form {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .footer-form__email {
@@ -1225,7 +1285,6 @@
 .list-images__item {
   position: relative;
   overflow: hidden;
-  flex-basis: calc((100% - 1 * 30px) / 1);
   margin-right: 0;
   margin-bottom: 30px;
   padding: 0;
@@ -1250,11 +1309,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .list-images__item {
-    flex-basis: calc((100% - 2 * 30px) / 2);
     margin-right: 30px;
-  }
-  .list-images__item:nth-child(2n + 2) {
-    margin-right: 0;
   }
 }
 
@@ -1477,6 +1532,9 @@ p {
 }
 
 img {
+  display: block;
+  max-width: 100%;
+  height: auto;
   padding: 0;
   margin: 0;
 }
