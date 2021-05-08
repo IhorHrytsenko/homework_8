@@ -8,6 +8,7 @@
 @import "./components/permanent";
 @import "./components/footer";
 @import "./components/portfolio";
+@import "./components/mobile-menu";
 
 *,
 *::before,
@@ -42,7 +43,9 @@ body {
 .menu,
 .address,
 .features-list,
+.menu-mobile__list,
 .what-we-do,
+.menu-mobile__address,
 .team-list,
 .list-images,
 .permanent-list,
@@ -55,21 +58,23 @@ body {
 }
 
 .container {
-  width: 100%;
+  max-width: 480px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (min-width: 320px) {
-    max-width: var(--mobile);
-  }
-
   @media screen and (min-width: 768px) {
     max-width: var(--tablet);
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media screen and (min-width: 1200px) {
     max-width: var(--monitor);
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
