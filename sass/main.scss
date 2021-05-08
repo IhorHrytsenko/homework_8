@@ -64,9 +64,10 @@ body {
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     max-width: var(--tablet);
     padding-left: 15px;
+    padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -74,6 +75,7 @@ body {
   @media screen and (min-width: 1200px) {
     max-width: var(--monitor);
     padding-left: 15px;
+    padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
   }

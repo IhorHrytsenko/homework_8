@@ -13,7 +13,7 @@
   --social-icon-color: rgba(255, 255, 255, 0.1);
   --timing-func: cubic-bezier(0.4, 0, 0.2, 1);
   --mobile: 480px;
-  --tablet: 768px;
+  --tablet: 1199px;
   --monitor: 1200px;
 }
 
@@ -21,6 +21,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .header {
@@ -48,6 +50,12 @@
 }
 
 @media screen and (min-width: 768px) {
+  .header__logo {
+    margin-right: 88px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
   .header__logo {
     margin-right: 93px;
   }
@@ -95,16 +103,32 @@
   fill: var(--main-interactiv-color);
 }
 
-.menu__link--active::after {
-  content: "";
-  display: flex;
-  margin-top: 28px;
-  margin-bottom: 0;
-  padding: 0;
-  border-radius: 2px;
-  background-color: var(--main-interactiv-color);
-  height: 4px;
-  border: 2px solid var(--main-interactiv-color);
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .menu__link--active::after {
+    content: "";
+    display: flex;
+    margin-top: 28px;
+    margin-bottom: 0;
+    padding: 0;
+    border-radius: 2px;
+    background-color: var(--main-interactiv-color);
+    height: 4px;
+    border: 2px solid var(--main-interactiv-color);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .menu__link--active::after {
+    content: "";
+    display: flex;
+    margin-top: 28px;
+    margin-bottom: 0;
+    padding: 0;
+    border-radius: 2px;
+    background-color: var(--main-interactiv-color);
+    height: 4px;
+    border: 2px solid var(--main-interactiv-color);
+  }
 }
 
 .menu__link {
@@ -117,9 +141,16 @@
 
 .address {
   display: flex;
+  flex-direction: column;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+
+@media screen and (min-width: 1200px) {
+  .address {
+    flex-direction: row;
+  }
 }
 
 .address__item {
@@ -127,7 +158,22 @@
 }
 
 .address__item:not(:last-child) {
-  margin-right: 50px;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .address__item:not(:first-child) {
+    margin-bottom: 21px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .address__item {
+    margin-bottom: 0;
+  }
+  .address__item:not(:last-child) {
+    margin-right: 50px;
+  }
 }
 
 .address__link {
@@ -491,39 +537,24 @@
   overflow: hidden;
 }
 
-.features-list,
-.features-icon-list {
+.features-list {
   display: flex;
   justify-content: space-between;
   padding-left: 0;
 }
 
 @media screen and (max-width: 768px) {
-  .features-list,
-  .features-icon-list {
+  .features-list {
     flex-direction: column;
   }
 }
 
-.features-icon-list__item {
-  background-color: var(--background-second);
-  background-size: 70px 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 270px;
-  height: 120px;
-  margin-bottom: 30px;
-  border-radius: 4px;
-}
-
-.features-icon-list__icon {
-  width: 70px;
-  height: 70px;
-}
-
-.features-list__item:not(:last-child) {
-  margin-right: 30px;
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .features-list {
+    flex-wrap: wrap;
+    margin-right: -30px;
+    justify-content: flex-start;
+  }
 }
 
 .features-list__item {
@@ -545,9 +576,23 @@
   background-size: 70px 70px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .features-list__item:not(:first-child) {
     margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .features-list__item {
+    width: 354px;
+    margin-top: 30px;
+  }
+  .features-list__item:not(:last-child) {
+    flex-basis: calc((100% - 2 * 30px) / 2);
+    margin-right: 30px;
+  }
+  .features-list__item:nth-child(2n + 2) {
+    margin-right: 0;
   }
 }
 
@@ -682,13 +727,18 @@
   margin-bottom: 30px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .team-list__item {
+    margin: 0;
     width: 354px;
   }
   .team-list__item:not(:last-child) {
     flex-basis: calc((100% - 2 * 30px) / 2);
     margin-right: 30px;
+    margin-bottom: 30px;
+  }
+  .team-list__item:nth-child(2n + 2) {
+    margin-right: 0;
     margin-bottom: 30px;
   }
 }
@@ -807,11 +857,14 @@
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .permanent-list__item {
     margin-right: 0;
-    margin-bottom: 0;
+    margin-bottom: 30px;
   }
   .permanent-list__item:not(:last-child) {
     flex-basis: calc((100% - 3 * 30px) / 3);
     margin-right: 30px;
+  }
+  .permanent-list__item:nth-child(3n + 3) {
+    margin-right: 0;
   }
 }
 
@@ -886,6 +939,7 @@
   .footer-list {
     flex-direction: row;
     align-items: baseline;
+    flex-wrap: wrap;
   }
 }
 
@@ -980,6 +1034,12 @@
   }
 }
 
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .footer-form__email {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
@@ -1023,6 +1083,14 @@
   padding-bottom: 10px;
   padding-left: 29px;
   margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .footer-form__button {
+    position: static;
+    left: 0;
+    transform: translate(0, 0);
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -1319,7 +1387,8 @@
   margin-bottom: 32px;
 }
 
-.menu-mobile__link {
+.menu-mobile__link,
+.menu-mobile__link--active {
   text-decoration: none;
   font-family: Roboto;
   font-weight: 500;
@@ -1330,7 +1399,13 @@
   color: var(--main-title-color);
 }
 
-.menu-mobile__link:hover, .menu-mobile__link:focus {
+.menu-mobile__link:hover, .menu-mobile__link:focus,
+.menu-mobile__link--active:hover,
+.menu-mobile__link--active:focus {
+  color: var(--main-interactiv-color);
+}
+
+.menu-mobile__link--active {
   color: var(--main-interactiv-color);
 }
 
@@ -1439,10 +1514,11 @@ body {
   margin-right: auto;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .container {
     max-width: var(--tablet);
     padding-left: 15px;
+    padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1452,6 +1528,7 @@ body {
   .container {
     max-width: var(--monitor);
     padding-left: 15px;
+    padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
   }
