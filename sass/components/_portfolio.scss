@@ -5,13 +5,32 @@
 
 .list-button {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 50px;
   list-style: none;
   padding: 0;
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 50px;
+
+    justify-content: center;
+  }
+}
+
+.list-button__item {
+  margin-bottom: 15px;
 
   &:not(:last-child) {
     margin-right: 8px;
